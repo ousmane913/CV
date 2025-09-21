@@ -1,4 +1,4 @@
-/* Style général */
+/* ===== Style général ===== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -13,9 +13,11 @@ body {
   background: #fff;
   padding: 20px;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  width: 100%;
 }
 
-/* En-tête */
+/* ===== En-tête ===== */
 .cv-header {
   display: flex;
   align-items: center;
@@ -23,6 +25,7 @@ body {
   color: white;
   padding: 20px;
   border-radius: 6px;
+  flex-wrap: wrap;
 }
 
 .cv-header img {
@@ -42,10 +45,10 @@ body {
   font-weight: bold;
   text-transform: uppercase;
 }
-
-/* Sections */
+/* ===== Sections ===== */
 .section {
   margin-top: 20px;
+  clear: both;
 }
 
 .section h2 {
@@ -60,8 +63,8 @@ body {
   text-align: justify;
 }
 
-/* Compétences */
-.skills span {
+/* ===== Compétences ===== */
+.compétences span {
   display: inline-block;
   background: #001F54;
   color: white;
@@ -71,89 +74,21 @@ body {
   font-size: 0.9em;
 }
 
-/* Dates alignées à droite */
+/* ===== Dates alignées à droite ===== */
 .date {
   float: right;
   color: #555;
   font-size: 0.9em;
 }
 
+/* ===== QR Code ===== */
 #qrcode {
   margin-top: 15px;
+  text-align: center;
 }
-/*  Styles spécifiques à l'impression */
-@media print {
-  body {
-    background: white !important;   /* pas de fond gris */
-    color: black !important;        /* texte noir pour économie d'encre */
-    font-size: 12pt;                /* taille adaptée à l’impression */
-  }
+/* ===== Responsive ===== */
 
-  .cv-container {
-    box-shadow: none;              /* pas d'ombre */
-    border: none;
-    padding: 0;
-  }
-
-  .cv-header {
-    background: #222 !important;    /* un en-tête sobre noir/gris */
-    color: white !important;
-  }
-
-  .skills span {
-    background: #444 !important;    /* couleurs simplifiées */
-    color: white !important;
-  }
-
-  #qrcode {
-    margin-top: 20px;
-    text-align: center;
-    page-break-inside: avoid;      /* éviter coupure du QR code */
-  }
-
-  /* Supprimer les marges de navigateur */
-  @page {
-    margin: 15mm;
-  }
-}
-@media print {
-  body * {
-    visibility: hidden;   /* cacher tout */
-  }
-  #qrcode, #qrcode * {
-    visibility: visible;  /* montrer seulement le QR code */
-  }
-  #qrcode {
-    position: absolute;
-    top: 40%;
-    left: 40%;
-    transform: translate(-40%, -40%);
-  }
-}
-@media screen and (max-width: 640px) { 
-.bloc { 
-display:block; 
-} 
-}
-/* Cacher le QR code sur écran */
-#qrcode {
-  display: none;
-}
-
-/* L'afficher seulement quand on imprime */
-@media print {
-  #qrcode {
-    display: block;
-    margin-top: 20px;
-    text-align: center;
-    page-break-inside: avoid;
-  }
-}
-body {
-    height: 1080px;
-    width: 1080px;
-}
-/* Mobile petit (iPhone SE, Galaxy S5) */
+/* Petits mobiles (iPhone SE, Galaxy S5) */
 @media screen and (max-width: 480px) {
   .cv-container {
     width: 95%;
@@ -166,12 +101,21 @@ body {
   .cv-header img {
     margin: 0 auto 10px;
   }
+  .date {
+    float: none;
+    display: block;
+    text-align: right;
+  }
 }
 
 /* Smartphones et tablettes en portrait */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .cv-container {
     width: 90%;
+  }
+  .cv-header {
+    flex-direction: column;
+    text-align: center;
   }
 }
 
@@ -182,82 +126,35 @@ body {
   }
 }
 
-/* Écrans PC */
+/* Écrans PC larges */
 @media screen and (min-width: 1025px) {
   .cv-container {
     width: 70%;
   }
 }
-/* Fix affichage sections après les floats */
-.section {
-  clear: both;
-}
-.cv-container {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 20px;
-  width: 100%;  /* pour que ça s’adapte */
-  box-sizing: border-box;
-}
-@media screen and (max-width: 768px) {
+
+/* ===== Impression ===== */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+  }
   .cv-container {
-    max-width: 100%;   /* le CV prend toute la largeur */
-    margin: 10px;      /* marges plus petites */
-    padding: 15px;
+    box-shadow: none;
+    border: none;
+    padding: 0;
   }
-
   .cv-header {
-    flex-direction: column;   /* photo au-dessus du nom */
-    text-align: center;
+    background: #222 !important;
+    color: white !important;
   }
-
-  .cv-header img {
-    margin-right: 0;
-    margin-bottom: 10px;
+  .compétences span {
+    background: #444 !important;
+    color: white !important;
   }
-
-  .date {
-    float: none;             /* évite que les dates cassent la mise en page */
-    display: block;
-    text-align: right;
-  }
-}
-/* Responsive pour téléphones et tablettes */
-@media screen and (max-width: 768px) {
-  .cv-container {
-    width: 100%;
-    margin: 0;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-
-  .cv-header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .cv-header img {
-    margin: 0 auto 10px;
-  }
-
-  .date {
-    float: none;
-    display: block;
-    text-align: right;
-  }
-}
-@media all and (max-width: 1280px) {
-  .cv-header img {
-    width: 100px;
-    height: 120px;
-  }
-
-  .cv-header h1 {
-    font-size: 1.4em;
-  }
-
-  .skills span {
-    font-size: 0.8em;
-    padding: 5px 10px;
+  #qrcode {
+    margin-top: 20px;
+    page-break-inside: avoid;
   }
 }

@@ -5,22 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CV - Oussoumane Souleymane DIARRASSOUBA</title>
   <link rel="stylesheet" href="dos.css">
-  <link rel="stylesheet" media="screen and (max-width: 640px)" 
-href="smallscreen.css" />
- 
+  <link rel="stylesheet" media="screen and (max-width:640px)" href="petit-ecran.css">
 </head>
 <body>
   <div class="cv-container">
 
     <!-- En-tête -->
     <header class="cv-header">
-      <div class="profile-photo">
+      <div class="photo-de-profil">
         <img src="id.jpg" alt="Photo de profil">
       </div>
       <div class="profile-info">
         <h1>Oussoumane Souleymane <br> <span class="lastname">DIARRASSOUBA</span></h1>
         <p>📍 Abidjan, adjamé-Williamsville</p>
-        <p>🎂 Âge : 19 ans</p>
+        <p>🎂 Âge : 20 ans</p>
         <p>📞 +225 0584608365</p>
         <p>✉ odiarrassouba5507@gmail.com</p>
       </div>
@@ -31,11 +29,10 @@ href="smallscreen.css" />
       <h2>Objectif</h2>
       <p>
         Je cherche à monter en compétences techniques dans le domaine de cybersécurité telles que la programmation,
-        sécurité des systèmes et l’analyse des vulnérabilités, à travers des formations et des projets pratiques
+        sécurité des systèmes et l'analyse des vulnérabilités, à travers des formations et des projets pratiques
         dans le but de me perfectionner et être opérationnel au profit du développement des entreprises.
       </p>
     </section>
-
     <!-- Compétences -->
     <section class="section">
       <h2>Compétences</h2>
@@ -44,8 +41,8 @@ href="smallscreen.css" />
         <span>Communication</span>
         <span>Service à la Clientèle</span>
         <span>Rigueur</span>
-        <span>Capacité à travailler en équipe</span>
-        <span>Capacité d’analyse</span>
+        <span>Travail en équipe</span>
+        <span>Capacité d'analyse</span>
       </div>
     </section>
 
@@ -61,26 +58,29 @@ href="smallscreen.css" />
           </ul>
         </li>
         <li>
-          <strong>Formation - La Source du Savoir Club</strong> 
+          <strong>Formation - Club La Source du Savoir</strong>
           <span class="date">Juillet 2024 - Septembre 2024</span>
           <ul>
             <li>Word</li>
             <li>Excel</li>
             <li>PowerPoint</li>
-            <strong>Formation - Python</strong> 
-          <span class="date">Avril 2025 - En Cours</span>
+          </ul>
+        </li>
+        <li>
+          <strong>Formation - Python</strong> 
+          <span class="date">Avril 2025 - En cours</span>
+          <ul>
             <li>Python</li>
             <li>Flask</li>
-            <li>Base De Données</li>
-            <strong>AUtoFormation</strong> 
-            <li>Débutant En Graphisme</li>
+            <li>Base de données</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Autodidacte</strong>
+          <ul>
+            <li>Débutant en Graphisme</li>
             <li>Débutant en Montage</li>
             <li>HTML/CSS</li>
-
-
-
-          
-             
           </ul>
         </li>
       </ul>
@@ -91,23 +91,22 @@ href="smallscreen.css" />
       <h2>Éducation</h2>
       <ul>
         <li>
-          <strong>Université Internationale des Sciences et Technologies d'Abidjan (UIST)</strong> 
+          <strong>Université Internationale des Sciences et Technologies d'Abidjan (UIST)</strong>
           <span class="date">2024-2025 (en cours)</span><br>
           Licence 2 Informatique, Réseau Informatique et Télécommunications
         </li>
         <li>
-          <strong>Lycée Moderne Bongouanou</strong> 
+          <strong>Lycée Moderne Bongouanou</strong>
           <span class="date">2016-2024</span><br>
           Bac D, SVT, Mathématiques et Sciences Physiques
         </li>
       </ul>
     </section>
-
     <!-- Intérêts -->
     <section class="section">
       <h2>Intérêts</h2>
       <ul>
-        <li>Lecture</li>
+        <li>Conférence</li>
         <li>Football</li>
       </ul>
     </section>
@@ -121,28 +120,29 @@ href="smallscreen.css" />
       </ul>
     </section>
 
-  </div>
-  <!-- Section QR Code -->
+    <!-- Code QR -->
     <section class="section">
-    
       <div id="qrcode"></div>
+    </section>
 
-    <!-- Script pour générer le QR Code -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <script>
-      new QRCode(document.getElementById("qrcode"), {
-        text: "https://ousmane913.github.io/CV/" ,
-        width: 150,
-        height: 150,
-        colorDark: "#000000",
-        colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.H
-      });
-    </script>
+    <!-- Bouton pour imprimer -->
+    <div class="print-btn">
+      <button onclick="window.print()">🖨 Imprimer mon CV</button>
+    </div>
+
   </div>
-  <!-- Bouton pour imprimer -->
-<div class="print-btn">
-  <button onclick="window.print()">🖨 Imprimer mon CV</button>
-</div>
+
+  <!-- Script QR Code -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    new QRCode(document.getElementById("qrcode"), {
+      text: "https://ousmane913.github.io/CV/",
+      width: 150,
+      height: 150,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
 </body>
 </html>
