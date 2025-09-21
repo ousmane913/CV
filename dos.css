@@ -153,3 +153,111 @@ body {
     height: 1080px;
     width: 1080px;
 }
+/* Mobile petit (iPhone SE, Galaxy S5) */
+@media screen and (max-width: 480px) {
+  .cv-container {
+    width: 95%;
+    padding: 10px;
+  }
+  .cv-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .cv-header img {
+    margin: 0 auto 10px;
+  }
+}
+
+/* Smartphones et tablettes en portrait */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .cv-container {
+    width: 90%;
+  }
+}
+
+/* Tablettes en paysage et petits laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .cv-container {
+    width: 80%;
+  }
+}
+
+/* Écrans PC */
+@media screen and (min-width: 1025px) {
+  .cv-container {
+    width: 70%;
+  }
+}
+/* Fix affichage sections après les floats */
+.section {
+  clear: both;
+}
+.cv-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  width: 100%;  /* pour que ça s’adapte */
+  box-sizing: border-box;
+}
+@media screen and (max-width: 768px) {
+  .cv-container {
+    max-width: 100%;   /* le CV prend toute la largeur */
+    margin: 10px;      /* marges plus petites */
+    padding: 15px;
+  }
+
+  .cv-header {
+    flex-direction: column;   /* photo au-dessus du nom */
+    text-align: center;
+  }
+
+  .cv-header img {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .date {
+    float: none;             /* évite que les dates cassent la mise en page */
+    display: block;
+    text-align: right;
+  }
+}
+/* Responsive pour téléphones et tablettes */
+@media screen and (max-width: 768px) {
+  .cv-container {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .cv-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cv-header img {
+    margin: 0 auto 10px;
+  }
+
+  .date {
+    float: none;
+    display: block;
+    text-align: right;
+  }
+}
+@media all and (max-width: 1280px) {
+  .cv-header img {
+    width: 100px;
+    height: 120px;
+  }
+
+  .cv-header h1 {
+    font-size: 1.4em;
+  }
+
+  .skills span {
+    font-size: 0.8em;
+    padding: 5px 10px;
+  }
+}
