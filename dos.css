@@ -77,3 +77,61 @@ body {
   color: #555;
   font-size: 0.9em;
 }
+
+#qrcode {
+  margin-top: 15px;
+}
+/*  Styles spécifiques à l'impression */
+@media print {
+  body {
+    background: white !important;   /* pas de fond gris */
+    color: black !important;        /* texte noir pour économie d'encre */
+    font-size: 12pt;                /* taille adaptée à l’impression */
+  }
+
+  .cv-container {
+    box-shadow: none;              /* pas d'ombre */
+    border: none;
+    padding: 0;
+  }
+
+  .cv-header {
+    background: #222 !important;    /* un en-tête sobre noir/gris */
+    color: white !important;
+  }
+
+  .skills span {
+    background: #444 !important;    /* couleurs simplifiées */
+    color: white !important;
+  }
+
+  #qrcode {
+    margin-top: 20px;
+    text-align: center;
+    page-break-inside: avoid;      /* éviter coupure du QR code */
+  }
+
+  /* Supprimer les marges de navigateur */
+  @page {
+    margin: 15mm;
+  }
+}
+@media print {
+  body * {
+    visibility: hidden;   /* cacher tout */
+  }
+  #qrcode, #qrcode * {
+    visibility: visible;  /* montrer seulement le QR code */
+  }
+  #qrcode {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-40%, -40%);
+  }
+}
+@media screen and (max-width: 640px) { 
+.bloc { 
+display:block; 
+} 
+}

@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CV - Oussoumane Souleymane DIARRASSOUBA</title>
   <link rel="stylesheet" href="dos.css">
+  <link rel="stylesheet" media="screen and (max-width: 640px)" 
+href="smallscreen.css" />
+ 
 </head>
 <body>
   <div class="cv-container">
@@ -119,5 +122,29 @@
     </section>
 
   </div>
+  <!-- Section QR Code -->
+    <section class="section">
+      <h2>Mon CV en ligne</h2>
+      <p>Scannez le code QR ci-dessous pour accéder à la version en ligne de mon CV :</p>
+      <div id="qrcode"></div>
+    </section>
+
+    <!-- Script pour générer le QR Code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+      new QRCode(document.getElementById("qrcode"), {
+        text: "https://ousmane913.github.io/CV/" ,
+        width: 150,
+        height: 150,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+      });
+    </script>
+  </div>
+  <!-- Bouton pour imprimer -->
+<div class="print-btn">
+  <button onclick="window.print()">🖨 Imprimer mon CV</button>
+</div>
 </body>
 </html>
