@@ -149,7 +149,7 @@ display:block;
     page-break-inside: avoid;
   }
 }
-html, body {
-    height: 400%;
-    width: 800%;
+body {
+    height: 1080%;
+    width: 1000%;
 }
